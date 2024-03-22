@@ -1,112 +1,204 @@
-h1{color: aliceblue;
-    margin-top: 2cm;
-    margin-left: 2cm;   
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-
 body{
-    height: 80vh;
+  background-image: url(img.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+::selection {
+  color: #000;
+  background: #fff;
+}
+nav {
+  position: fixed;
+  background: #1b1b1b;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 12;
+}
+nav .menu {
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.menu .logo a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+.menu ul {
+  display: inline-flex;
+}
+.menu ul li {
+  list-style: none;
+  margin-left: 7px;
+}
+.menu ul li:first-child {
+  margin-left: 0px;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.menu ul li a:hover {
+  background: #fff;
+  color: black;
 }
 
-#D2 {
-    border: 5px solid;
-    border-radius: 10px;
-    width: 150px;
-    height: 30px;
-    font-size: 20px;
-    background: rgb(87, 209, 99);
-    text-align: center;
+.img::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
 }
 
-#D3{
-    border: 5px solid;
-    border-radius: 10px;
-	width: 150px;
-	height: 30px;
-	font-size: 20px;
-	background: rgb(35, 145, 46);
-    margin-left:12cm;
-    text-align: center;
+                                                    /* ************Games********* */
+.btns button a {
+  text-decoration: none;
+  color: inherit;
+}
+.center .btns {
+  margin-top: 20px;
+}
+.center .btns button {
+  height: 55px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  border: 2px solid;
 }
 
-#D4{border: 5px solid;
-    border-radius: 10px;
-	width: 150px;
-	height: 30px;
-	font-size: 20px;
-	background: rgb(59, 137, 107);
-    margin-left:18cm;
-    text-align: center;
+.center .btns button:hover {
+  background-color: transparent;
+  color: white;
 }
 
-#i2, #i3, #i4 {
-    width: 150px;
-    height: 150px;
-}
+
 .s {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Allow items to wrap onto the next line if needed */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */  
 }
+
+@media (max-width: 908px) {
+  .s {
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+  }
+  .center .btns button {
+    margin-bottom: 60px;
+  }
+  body{
+    height: 150vh;
+  }}
+
+@media (max-width: 700px) {
+  .s {
+    grid-template-columns: repeat(1, 1fr); 
+    
+  }}
 
 .game-container {
-    text-align: center;
-    margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-#D2, #D3, #D4 {
-    margin: 10px; /* Adjust the spacing between items */
+.game-container img {
+  width: 250px;
+  height: 250px; /* Adjust image width as needed */
+}
+
+.btns {
+  margin-top: 10px; /* Adjust the margin between image and button */
 }
 
 
-body{
-    background-image: url("bgwallpeper.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-}
+                           /* **************************** */
+
+
+#gameBoard {
+            display: block;
+            margin: 0 auto;
+             margin-top: 150px;
+            }
 
 #playerText{
-    color: blue;
+  color: blue;
 }
 #computerText{
-    color: red;
+  color: red;
 }
 .cell{
-    width: 75px;
-    height: 75px;
-    border: 2px solid;
-    box-shadow: 0 0 0 2px;
-    line-height: 75px;
-    font-size: 50px;
-    cursor: pointer;
+  width: 75px;
+  height: 75px;
+  border: 2px solid;
+  box-shadow: 0 0 0 2px;
+  line-height: 75px;
+  font-size: 50px;
+  cursor: pointer;
 }
 
 #cellContainer{
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    width: 225px;
-    margin: auto;   
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 225px;
+  margin: auto;  
 }
 
-#gameContainer{
-    text-align: center;
-    margin-top: 2cm;
-}
 #gameBoard{
-    border: 3px solid;
+  border: 3px solid;
 }
 #scoreText{
-    font-family: "Permanent Marker", cursive;
-    font-size: 100px;
+  font-family: "Permanent Marker", cursive;
+  font-size: 100px;
 }
 #resetBtn, #restartBtn{
-    font-family: "Permanent Marker", cursive;
-    font-size: 22px;
-    width: 100px;
-    height: 50px;
-    border: 4px solid;
-    border-radius: 15px;
-    cursor: pointer;
+  font-family: "Permanent Marker", cursive;
+  font-size: 22px;
+  width: 100px;
+  height: 50px;
+  border: 4px solid;
+  border-radius: 15px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
 }
